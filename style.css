@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+}
+
+#unicode-chart {
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 2px solid #000;
+}
+
+#unicode-chart td,
+#unicode-chart th {
+    border: 1px solid #000;
+    padding: 0;
+}
+
+#unicode-chart th {
+    background-color: #9d9;
+    font-weight: bold;
+}
+
+#header-edge {
+    width: 30px;
+    height: 30px;
+}
+
+#horizontal-header {
+    position: relative;
+    width: auto;
+    height: 30px;
+    overflow: hidden;
+}
+
+#horizontal-header .section {
+    position: absolute;
+    top: 0;
+    left: unset /* Changed by the script. */;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: left 0.5s;
+}
+
+#horizontal-header .cell {
+    border-right: 1px solid #000;
+}
+
+#vertical-header {
+    position: relative;
+    width: 30px;
+    height: auto;
+    overflow: hidden;
+}
+
+#vertical-header .section {
+    position: absolute;
+    top: unset /* Changed by the script. */;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    transition: top 0.5s;
+}
+
+#vertical-header .cell {
+    border-bottom: 1px solid #000;
+}
+
+#chart-body {
+    position: relative;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+#chart-body .section {
+    position: absolute;
+    display: flex;
+    flex-flow: row wrap;
+    transition: left 0.5s, top 0.5s;
+}
+
+#chart-body .cell {
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+#chart-body .cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#chart-body .cell .glyph {
+    flex: 1 0 auto;
+}
+
+#chart-body .cell .code-point {
+    flex: 0 0 auto;
+}
